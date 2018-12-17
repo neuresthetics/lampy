@@ -1,10 +1,66 @@
 # imports
-from textwrap import dedent
-import sys
+# from textwrap import dedent
+# import sys
 import uuid
 
 
 
+
+class Charcube:
+    def __init__(self):
+        self.cube = []
+        self.input_str = ''
+        self.id = str(uuid.uuid4())
+
+
+def generate_lampe_cube():
+    temp_cube = Charcube()
+    params = take_input() #return {'input_str': input_str, 'input_offset': input_offset, 'input_interval': input_interval}
+    sentence = params['input_str']
+    words = sentence.split()
+    output = ''
+    lettercount = 0
+    #check for quit or about
+    # should genetate the cube, print it, ask if save, and then call take input.
+
+
+    return temp_cube
+
+
+def save_cube():
+    #to fs
+
+
+def take_input():
+
+    #check for quit or about
+
+    input_str = input(f'''input a string to lampe-cube.
+    May include any UTF-8 characters.
+    TIP: adjacently encoded characters in series will produce visual text-rivers.
+    ex : abc, 123{chr(8811)}   ''')
+
+    input_offset = input(f'''input UTF-8 offset.
+    This will incriment the UTF-8 code of ALL characters of the string by the given ammount.
+    Negitive numbers accepted.{chr(8811)}   ''')
+
+    input_interval = input(f'''input UTF-8 interval.
+    This will incriment the UTF-8 code of EACH character of the string by the given ammount.
+    Negitive numbers accepted. {chr(8811)}   ''')
+
+    return generate_lampe_cube(input_str, input_offset, input_interval)
+
+
+if __name__ == '__main__':
+    '''
+    run : core
+    keu exit : polite
+    '''
+    try:
+        print('LAMPE CUBE :D')
+        take_input()
+    except KeyboardInterrupt:
+        exit()
 
 # def letterBlock(phrase, offset, interval):
 #     sentence = phrase
@@ -34,7 +90,7 @@ import uuid
 #     sentence = output
 #     words = sentence.split()
 #     output = ''
-  
+
 #   return returnString
 
 # # print(letterBlock("J A S O N", 0, 1))
@@ -49,7 +105,7 @@ import uuid
 # #   undoprint += ' '
 # #   for x in letter:
 # #     undoprint += (chr(ord(x)-1111))
-  
+
 # # print(undoprint)
 
 # # def break_line():
