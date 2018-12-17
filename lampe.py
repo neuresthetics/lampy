@@ -4,24 +4,35 @@
 import uuid
 
 
+# take_input -> generate_lampe_cube -> take_input
 
 
-class Charcube:
+class Lampecube:
     def __init__(self):
         self.cube = []
         self.input_str = ''
         self.id = str(uuid.uuid4())
 
 
-def generate_lampe_cube():
-    temp_cube = Charcube()
-    params = take_input() #return {'input_str': input_str, 'input_offset': input_offset, 'input_interval': input_interval}
-    sentence = params['input_str']
-    words = sentence.split()
+def generate_lampe_cube(input_str, input_offset, input_interval):
+
+    temp_cube = Lampecube()
+
+    words = input_str.split()
     output = ''
-    lettercount = 0
+
+    # lettercount = 0
     #check for quit or about
     # should genetate the cube, print it, ask if save, and then call take input.
+
+    #initial str with UTF offset
+    for word in words:
+        for letter in word:
+            # lettercount += 1
+            output += (chr(ord(letter)+int(input_offset)))
+            output += ' ' #spacer between chars
+
+    print(output)
 
 
     return temp_cube
@@ -29,6 +40,7 @@ def generate_lampe_cube():
 
 def save_cube():
     #to fs
+    pass
 
 
 def take_input():
