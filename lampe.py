@@ -9,33 +9,54 @@ import uuid
 
 class Lampecube:
     def __init__(self):
-        self.cube = []
+        self.cube = ''
         self.input_str = ''
         self.id = str(uuid.uuid4())
 
 
 def generate_lampe_cube(input_str, input_offset, input_interval):
+    # check for quit or about
+    # should genetate the cube, print it, ask save, then call take input.
 
     temp_cube = Lampecube()
+    temp_cube.input_str = input_str
+    symbols = ''
 
-    words = input_str.split()
+    for word in (input_str.split()):
+        for symbol in word:
+            symbols += symbol
+            symbols += ' '
+
+    output = ''
+    return_string = ''
+    lines = 0
+    # break the sentence into word strings
+
+    # mutate and set initial str with UTF offset
+    for word in symbols:
+        for letter in word:
+            output += (chr(ord(letter)+int(input_offset)))
+            lines += 1
+        output += ' '
+    return_string += output + '\n'
+
+    symbols = output.split()
     output = ''
 
-    # lettercount = 0
-    #check for quit or about
-    # should genetate the cube, print it, ask if save, and then call take input.
+    # lines after the first with sequential
+    for k in range(lines - 1):
+        for word in symbols:
+            for letter in word:
+                output += (chr(ord(letter)+int(input_interval)))
+            output += ' '
 
-    #initial str with UTF offset
-    for word in words:
-        for letter in word:
-            # lettercount += 1
-            output += (chr(ord(letter)+int(input_offset)))
-            output += ' ' #spacer between chars
-
-    print(output)
+        return_string += output + "\n"
+        symbols = output.split()
+        output = ''
 
 
-    return temp_cube
+    print(return_string)
+
 
 
 def save_cube():
@@ -50,15 +71,15 @@ def take_input():
     input_str = input(f'''input a string to lampe-cube.
     May include any UTF-8 characters.
     TIP: adjacently encoded characters in series will produce visual text-rivers.
-    ex : abc, 123{chr(8811)}   ''')
+    ex : abc, 123. >>   ''')
 
     input_offset = input(f'''input UTF-8 offset.
     This will incriment the UTF-8 code of ALL characters of the string by the given ammount.
-    Negitive numbers accepted.{chr(8811)}   ''')
+    Negitive numbers accepted. >>   ''')
 
     input_interval = input(f'''input UTF-8 interval.
     This will incriment the UTF-8 code of EACH character of the string by the given ammount.
-    Negitive numbers accepted. {chr(8811)}   ''')
+    Negitive numbers accepted. >>   ''')
 
     return generate_lampe_cube(input_str, input_offset, input_interval)
 
@@ -76,7 +97,7 @@ if __name__ == '__main__':
 
 # def letterBlock(phrase, offset, interval):
 #     sentence = phrase
-#     words = sentence.split()
+#     symbols = sentence.split()
 #     output = ''
 #     lettercount = 0
 #     returnString = ''
