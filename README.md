@@ -1,5 +1,6 @@
 # lampe
 UTF-8 rotation of letters in sequence for nothing but art.
+View on desktop.
 https://repl.it/@jasonb315/worDrow
 
 
