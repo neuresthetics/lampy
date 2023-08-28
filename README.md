@@ -4,7 +4,7 @@ https://repl.it/@jasonb315/worDrow
 
 
 
-```Python code
+```Python
 def letterBlock(phrase, offset, interval):
 
   sentence = phrase
@@ -37,7 +37,7 @@ def letterBlock(phrase, offset, interval):
   
   return returnString
 ```
-```Pthon inputs
+```Python
 print(letterBlock("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Y X W V U T S R Q P O N M L K J I H G F E D C B A", 10553, -1))
 
 # print(letterBlock("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Y X W V U T S R Q P O N M L K J I H G F E D C B A", 10500, -1))
