@@ -1,6 +1,6 @@
 # lampe (desktop size)
 UTF-8 rotation of letters in sequence for nothing but art.
-https://repl.it/@jasonb315/worDrow
+<!--- https://repl.it/@jasonb315/worDrow --->
 
 
 
