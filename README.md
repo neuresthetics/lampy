@@ -2,6 +2,79 @@
 UTF-8 rotation of letters in sequence for nothing but art.
 https://repl.it/@jasonb315/worDrow
 
+
+
+```Python code
+def letterBlock(phrase, offset, interval):
+
+  sentence = phrase
+  words = sentence.split()
+  output = ''
+  lettercount = 0
+  returnString = ''
+
+  for word in words:
+    for letter in word:
+      lettercount += 1
+      output += (chr(ord(letter)+offset))
+    output += ' '
+
+  returnString += output + "\n"
+  sentence = output
+  words = sentence.split()
+  output = ''
+
+  for k in range(51):
+    for word in words:
+      for letter in word:
+        output += (chr(ord(letter)+interval))
+      output += ' '
+
+    returnString += output + "\n"
+    sentence = output
+    words = sentence.split()
+    output = ''
+  
+  return returnString
+```
+```Pthon inputs
+print(letterBlock("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Y X W V U T S R Q P O N M L K J I H G F E D C B A", 10553, -1))
+
+# print(letterBlock("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Y X W V U T S R Q P O N M L K J I H G F E D C B A", 10500, -1))
+
+# print(letterBlock("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Y X W V U T S R Q P O N M L K J I H G F E D C B A", 10447, -2))
+
+# print(letterBlock("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Y X W V U T S R Q P O N M L K J I H G F E D C B A", 10394, -1))
+
+# print(letterBlock("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Y X W V U T S R Q P O N M L K J I H G F E D C B A", 10000, -100))
+
+# print(letterBlock("the quick brown fox jumps over the lazy dog", 10394, -10))
+
+# print(letterBlock("N", 10500, -1))
+
+
+# print(len("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z Y X W V U T S R Q P O N M L K J I H G F E D C B A"))
+
+# print('ding')
+
+
+
+# def letterBlockmini(phrase):
+
+
+#   words = phrase.split()
+#   output = ''
+
+#   for word in words:
+#     for letter in word:
+#       output += (chr(ord(letter)+1))
+  
+#   print(output) 
+
+
+# print(letterBlockmini("серафими многоꙮчитїи")
+```
+
 ⣛ ⣜ ⣝ ⣞ ⣟ ⣠ ⣡ ⣢ ⣣ ⣤ ⣥ ⣦ ⣧ ⣨ ⣩ ⣪ ⣫ ⣬ ⣭ ⣮ ⣯ ⣰ ⣱ ⣲ ⣳ ⣴ ⣳ ⣲ ⣱ ⣰ ⣯ ⣮ ⣭ ⣬ ⣫ ⣪ ⣩ ⣨ ⣧ ⣦ ⣥ ⣤ ⣣ ⣢ ⣡ ⣠ ⣟ ⣞ ⣝ ⣜ ⣛<br>
 ⣚ ⣛ ⣜ ⣝ ⣞ ⣟ ⣠ ⣡ ⣢ ⣣ ⣤ ⣥ ⣦ ⣧ ⣨ ⣩ ⣪ ⣫ ⣬ ⣭ ⣮ ⣯ ⣰ ⣱ ⣲ ⣳ ⣲ ⣱ ⣰ ⣯ ⣮ ⣭ ⣬ ⣫ ⣪ ⣩ ⣨ ⣧ ⣦ ⣥ ⣤ ⣣ ⣢ ⣡ ⣠ ⣟ ⣞ ⣝ ⣜ ⣛ ⣚<br>
 ⣙ ⣚ ⣛ ⣜ ⣝ ⣞ ⣟ ⣠ ⣡ ⣢ ⣣ ⣤ ⣥ ⣦ ⣧ ⣨ ⣩ ⣪ ⣫ ⣬ ⣭ ⣮ ⣯ ⣰ ⣱ ⣲ ⣱ ⣰ ⣯ ⣮ ⣭ ⣬ ⣫ ⣪ ⣩ ⣨ ⣧ ⣦ ⣥ ⣤ ⣣ ⣢ ⣡ ⣠ ⣟ ⣞ ⣝ ⣜ ⣛ ⣚ ⣙<br>
